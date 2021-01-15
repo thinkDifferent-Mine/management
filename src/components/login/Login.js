@@ -10,6 +10,16 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import { Formik} from "formik";
+import * as Yup from "yup";
+
+const SignupSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+});
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -47,6 +57,18 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Admin Login
         </Typography>
+        <Formik
+       initialValues={{
+         email: '',
+         password: '',  
+       }}
+       validationSchema={SignupSchema}
+       onSubmit={values => {
+         // same shape as initial values
+         console.log(values);
+       }}
+     >
+        {({ errors, touched }) => (
         <form className={classes.form} noValidate>
           <TextField
             variant="standard"
@@ -59,6 +81,7 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
           />
+          {errors.email && touched.email ? <div>{errors.email}</div> : null}
           <TextField
             variant="standard"
             margin="normal"
@@ -70,6 +93,7 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
+          {errors.password && touched.password ? <div>{errors.password}</div> : null}
           <Box display="flex">
             <Button
               type="submit"
@@ -90,6 +114,8 @@ export default function SignIn() {
             </Grid>
           </Grid>
         </form>
+        )}
+        </Formik>
       </div>
     </Container>
   );

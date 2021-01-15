@@ -1,4 +1,4 @@
-import './App.css';
+
 import AppRouter from "routers/Router";
 import React, { Fragment } from "react";
 
