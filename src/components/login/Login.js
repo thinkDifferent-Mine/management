@@ -1,16 +1,17 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Grid,
+  Link,
+} from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
+import { Typography, Container, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import { Formik} from "formik";
+import { useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 const SignupSchema = Yup.object().shape({
@@ -23,7 +24,6 @@ const SignupSchema = Yup.object().shape({
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -41,16 +41,29 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(12),
     backgroundColor: "#1769aa",
   },
+  mainWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+  },
 }));
 
 export default function SignIn() {
   const classes = useStyles();
+  const history = useHistory();
+  const handleSubmit = async (value) => {
+    const { email, password } = value;
+    if (email === "admin@gmail.com" && password === "123456") {
+      await localStorage.setItem("isLogin", true);
+      history.push("/dashboard");
+    }
+  };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Grid container style={{ minHeight: "20vh" }}></Grid>
+    <Container component="main" className={classes.mainWrapper}>
       <CssBaseline />
-      <div className={classes.paper} marginTop="50%">
+      <Grid className={classes.paper} xs={4}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -58,65 +71,70 @@ export default function SignIn() {
           Admin Login
         </Typography>
         <Formik
-       initialValues={{
-         email: '',
-         password: '',  
-       }}
-       validationSchema={SignupSchema}
-       onSubmit={values => {
-         // same shape as initial values
-         console.log(values);
-       }}
-     >
-        {({ errors, touched }) => (
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="standard"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          {errors.email && touched.email ? <div>{errors.email}</div> : null}
-          <TextField
-            variant="standard"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          {errors.password && touched.password ? <div>{errors.password}</div> : null}
-          <Box display="flex">
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
-          </Box>
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          validationSchema={SignupSchema}
+          onSubmit={(values) => {
+            // same shape as initial values
+            handleSubmit(values);
+          }}
+        >
+          {({ errors, touched, handleBlur, handleChange, values }) => (
+            <Form className={classes.form}>
+              <TextField
+                variant="standard"
+                margin="normal"
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                onBlur={handleBlur}
+                value={values.email}
+                onChange={handleChange}
+                error={touched.email && Boolean(errors.email)}
+                helperText={touched.email && errors.email}
+              />
 
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2" color="#1769aa">
-                Forgot password?
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-        )}
+              <TextField
+                variant="standard"
+                margin="normal"
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                onBlur={handleBlur}
+                value={values.password}
+                onChange={handleChange}
+                error={touched.password && Boolean(errors.password)}
+                helperText={touched.password && errors.password}
+              />
+
+              <Box display="flex">
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                >
+                  Sign In
+                </Button>
+              </Box>
+
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2" color="#1769aa">
+                    Forgot password?
+                  </Link>
+                </Grid>
+              </Grid>
+            </Form>
+          )}
         </Formik>
-      </div>
+      </Grid>
     </Container>
   );
 }

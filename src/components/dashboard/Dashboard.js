@@ -7,15 +7,13 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
+import {IconButton, Button} from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-
-
+import { useHistory } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -99,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+  const history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -107,6 +106,11 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleLogout=()=>{
+    localStorage.setItem("isLogin",false);
+    history.push("/");
+  }
   
 
   return (
@@ -126,11 +130,9 @@ export default function Dashboard() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          <Button onClick={handleLogout} color="inherit">
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -146,7 +148,9 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        
+          <p> Work Management</p>
+          <p>Leave Management</p>
+          <p>Payroll Management</p>
         <Divider />
         
       </Drawer>

@@ -1,19 +1,22 @@
 import Login from "components/login/Login";
 import Dashboard from "components/dashboard/Dashboard";
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
+
 
 function AppRouter() {
   return (
     <Fragment>
       <Router>
         <Switch>
-          <Route path="/" exact>
+          <PublicRoute path="/" exact>
             <Login />
-          </Route>
-          <Route path="/dashboard">
+          </PublicRoute>
+          <PrivateRoute path="/dashboard">
             <Dashboard/>
-            </Route>
+            </PrivateRoute>
         </Switch>
       </Router>
     </Fragment>
