@@ -12,10 +12,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import Badge from '@material-ui/core/Badge';
 import { useHistory } from "react-router-dom";
 import { mainListItems} from './NavSider';
 import List from '@material-ui/core/List';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const drawerWidth = 240;
 
@@ -132,11 +134,15 @@ export default function Dashboard() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
+          <IconButton aria-label="show 17 new notifications" color="inherit">
+              <Badge badgeContent={17} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
           <Button onClick={handleLogout} color="inherit">
           <IconButton color="inherit">
             <ExitToAppIcon />
-          </IconButton>
-            Logout
+          </IconButton>            
           </Button>
         </Toolbar>
       </AppBar>
