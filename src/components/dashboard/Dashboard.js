@@ -14,6 +14,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { useHistory } from "react-router-dom";
+import { mainListItems} from './NavSider';
+import List from '@material-ui/core/List';
 
 const drawerWidth = 240;
 
@@ -148,9 +150,7 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-          <p> Work Management</p>
-          <p>Leave Management</p>
-          <p>Payroll Management</p>
+        <List>{mainListItems}</List>
         <Divider />
         
       </Drawer>
