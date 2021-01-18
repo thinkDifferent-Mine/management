@@ -12,7 +12,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useHistory } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -130,6 +130,11 @@ export default function Dashboard() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
+          <IconButton color="inherit">
+           
+              <ExitToAppIcon />
+        
+          </IconButton>
           <Button onClick={handleLogout} color="inherit">
             Logout
           </Button>
@@ -148,9 +153,6 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-          <p> Work Management</p>
-          <p>Leave Management</p>
-          <p>Payroll Management</p>
         <Divider />
         
       </Drawer>
