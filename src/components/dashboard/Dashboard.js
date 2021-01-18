@@ -19,7 +19,7 @@ import { mainListItems} from './NavSider';
 import List from '@material-ui/core/List';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
   root: {
