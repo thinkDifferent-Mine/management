@@ -15,11 +15,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import { useHistory } from "react-router-dom";
-import { mainListItems} from './NavSider';
-import List from '@material-ui/core/List';
+import NavList from './NavList';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-const drawerWidth = 260;
+const drawerWidth = 290;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -159,7 +158,7 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+         <NavList/>
         <Divider />
         
       </Drawer>
