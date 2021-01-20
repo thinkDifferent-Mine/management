@@ -1,25 +1,25 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import SendIcon from '@material-ui/icons/Send';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import EventAvailableIcon from '@material-ui/icons/EventAvailable';
-import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import UpdateIcon from '@material-ui/icons/Update';
-import GroupIcon from '@material-ui/icons/Group';
-import DateRangeIcon from '@material-ui/icons/DateRange';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Collapse from "@material-ui/core/Collapse";
+import SendIcon from "@material-ui/icons/Send";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import EventAvailableIcon from "@material-ui/icons/EventAvailable";
+import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import UpdateIcon from "@material-ui/icons/Update";
+import GroupIcon from "@material-ui/icons/Group";
+import DateRangeIcon from "@material-ui/icons/DateRange";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
@@ -40,12 +40,10 @@ export default function NavList() {
   };
 
   return (
-    <List
-      
-    >
+    <List>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-        <GroupIcon />
+          <GroupIcon />
         </ListItemIcon>
         <ListItemText primary="Employee Management" />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -54,13 +52,13 @@ export default function NavList() {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-            <PersonAddIcon/>
+              <PersonAddIcon />
             </ListItemIcon>
             <ListItemText primary="Add Employee" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-            <UpdateIcon/>
+              <UpdateIcon />
             </ListItemIcon>
             <ListItemText primary="Employee Status" />
           </ListItem>
@@ -69,14 +67,14 @@ export default function NavList() {
 
       <ListItem button>
         <ListItemIcon>
-        <WorkOutlineIcon/>
+          <WorkOutlineIcon />
         </ListItemIcon>
         <ListItemText primary="Work Management" />
       </ListItem>
-      
+
       <ListItem button onClick={handleClickLeave}>
         <ListItemIcon>
-        <EventAvailableIcon />
+          <EventAvailableIcon />
         </ListItemIcon>
         <ListItemText primary="Leave Management" />
         {leave ? <ExpandLess /> : <ExpandMore />}
@@ -85,13 +83,13 @@ export default function NavList() {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-            <SendIcon/>
+              <SendIcon />
             </ListItemIcon>
             <ListItemText primary="Request" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-            <CheckCircleOutlineIcon/>
+              <CheckCircleOutlineIcon />
             </ListItemIcon>
             <ListItemText primary="Approved" />
           </ListItem>
@@ -99,13 +97,13 @@ export default function NavList() {
       </Collapse>
       <ListItem button>
         <ListItemIcon>
-        <AttachMoneyIcon />
+          <AttachMoneyIcon />
         </ListItemIcon>
         <ListItemText primary="Payroll Management" />
       </ListItem>
       <ListItem button>
         <ListItemIcon>
-        <DateRangeIcon />
+          <DateRangeIcon />
         </ListItemIcon>
         <ListItemText primary="Work Calender" />
       </ListItem>
