@@ -1,5 +1,6 @@
 import Login from "components/login/Login";
 import Dashboard from "components/dashboard/Dashboard";
+import AllInfo from '../components/AddEmployee/AllInfo';
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
@@ -16,6 +17,9 @@ function AppRouter() {
           </PublicRoute>
           <PrivateRoute path="/dashboard">
             <Dashboard/>
+            </PrivateRoute>
+            <PrivateRoute path="/allinfo">
+              <AllInfo />
             </PrivateRoute>
         </Switch>
       </Router>
