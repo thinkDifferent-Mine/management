@@ -17,6 +17,7 @@ import UpdateIcon from "@material-ui/icons/Update";
 import GroupIcon from "@material-ui/icons/Group";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -43,7 +44,7 @@ export default function NavList() {
     <List>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <GroupIcon style={{ color: "blue" }}/>
+          <GroupIcon style={{ color: "blue" }} />
         </ListItemIcon>
         <ListItemText primary="Employee Management" />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -79,7 +80,7 @@ export default function NavList() {
 
       <ListItem button onClick={handleClickLeave}>
         <ListItemIcon>
-          <EventAvailableIcon style={{ color: "red" }}/>
+          <EventAvailableIcon style={{ color: "red" }} />
         </ListItemIcon>
         <ListItemText primary="Leave Management" />
         {leave ? <ExpandLess /> : <ExpandMore />}
@@ -88,13 +89,13 @@ export default function NavList() {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <SendIcon style={{ color: "blue" }}/>
+              <SendIcon style={{ color: "blue" }} />
             </ListItemIcon>
             <ListItemText primary="Request" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <CheckCircleOutlineIcon style={{ color: "green" }}/>
+              <CheckCircleOutlineIcon style={{ color: "green" }} />
             </ListItemIcon>
             <ListItemText primary="Approved" />
           </ListItem>
@@ -110,6 +111,7 @@ export default function NavList() {
         <ListItemIcon>
           <DateRangeIcon style={{ color: "green" }} />
         </ListItemIcon>
+      
         <ListItemText primary="Work Calender" />
       </ListItem>
     </List>

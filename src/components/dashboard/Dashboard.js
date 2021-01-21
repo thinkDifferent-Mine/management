@@ -17,6 +17,7 @@ import Badge from "@material-ui/core/Badge";
 import { useHistory } from "react-router-dom";
 import NavList from "./NavList";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Demo from "components/workCalender/Demo";
 const drawerWidth = 290;
 
 const useStyles = makeStyles((theme) => ({
@@ -177,6 +178,7 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}></Grid>
         </Container>
+        <Demo/>
       </main>
     </div>
   );
