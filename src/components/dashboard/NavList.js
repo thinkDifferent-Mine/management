@@ -9,6 +9,7 @@ import SendIcon from "@material-ui/icons/Send";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
+import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
@@ -16,7 +17,6 @@ import UpdateIcon from "@material-ui/icons/Update";
 import GroupIcon from "@material-ui/icons/Group";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import { Link } from "react-router-dom";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,7 +44,7 @@ export default function NavList() {
     <List>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <GroupIcon />
+          <GroupIcon style={{ color: "blue" }} />
         </ListItemIcon>
         <ListItemText primary="Employee Management" />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -53,7 +53,7 @@ export default function NavList() {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <PersonAddIcon />
+              <PersonAddIcon style={{ color: "orange" }} />
             </ListItemIcon>
             <Link
               to="allinfo"
@@ -64,7 +64,7 @@ export default function NavList() {
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <UpdateIcon />
+              <UpdateIcon style={{ color: "green" }} />
             </ListItemIcon>
             <ListItemText primary="Employee Status" />
           </ListItem>
@@ -73,14 +73,14 @@ export default function NavList() {
 
       <ListItem button>
         <ListItemIcon>
-          <WorkOutlineIcon />
+          <WorkOutlineIcon style={{ color: "purple" }} />
         </ListItemIcon>
         <ListItemText primary="Work Management" />
       </ListItem>
 
       <ListItem button onClick={handleClickLeave}>
         <ListItemIcon>
-          <EventAvailableIcon />
+          <EventAvailableIcon style={{ color: "red" }} />
         </ListItemIcon>
         <ListItemText primary="Leave Management" />
         {leave ? <ExpandLess /> : <ExpandMore />}
@@ -89,13 +89,13 @@ export default function NavList() {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <SendIcon />
+              <SendIcon style={{ color: "blue" }} />
             </ListItemIcon>
             <ListItemText primary="Request" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <CheckCircleOutlineIcon />
+              <CheckCircleOutlineIcon style={{ color: "green" }} />
             </ListItemIcon>
             <ListItemText primary="Approved" />
           </ListItem>
@@ -103,14 +103,15 @@ export default function NavList() {
       </Collapse>
       <ListItem button>
         <ListItemIcon>
-          <AttachMoneyIcon />
+          <AttachMoneyIcon style={{ color: "orange" }} />
         </ListItemIcon>
         <ListItemText primary="Payroll Management" />
       </ListItem>
       <ListItem button>
         <ListItemIcon>
-          <DateRangeIcon />
+          <DateRangeIcon style={{ color: "green" }} />
         </ListItemIcon>
+      
         <ListItemText primary="Work Calender" />
       </ListItem>
     </List>
