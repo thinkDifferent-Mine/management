@@ -27,7 +27,7 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+  return { name, calories, fat, carbs, protein};
 }
 
 const rows = [
@@ -56,7 +56,6 @@ export default function CustomizedTables() {
           <TableRow>
             <StyledTableCell>No</StyledTableCell>
             <StyledTableCell align="right">EmpId</StyledTableCell>
-            
             <StyledTableCell align="right">Leave Type</StyledTableCell>
             <StyledTableCell align="right">Requested date</StyledTableCell>
             <StyledTableCell align="right">From Date</StyledTableCell>
@@ -75,6 +74,9 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.calories}</StyledTableCell>
+              <StyledTableCell align="right">{row.fat}</StyledTableCell>
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
