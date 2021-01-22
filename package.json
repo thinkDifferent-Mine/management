@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@devexpress/dx-core": "^2.7.4",
     "@devexpress/dx-react-core": "^2.7.4",
     "@devexpress/dx-react-scheduler": "^2.7.4",
     "@devexpress/dx-react-scheduler-material-ui": "^2.7.4",
@@ -19,6 +20,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-table": "^7.6.3",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.8"
   },
