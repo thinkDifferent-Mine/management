@@ -91,13 +91,23 @@ export default function NavList() {
             <ListItemIcon>
               <SendIcon style={{ color: "blue" }} />
             </ListItemIcon>
-            <ListItemText primary="Request" />
+            <Link
+              to="request"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <ListItemText primary="Request" />
+            </Link>
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <CheckCircleOutlineIcon style={{ color: "green" }} />
             </ListItemIcon>
-            <ListItemText primary="Approved" />
+            <Link
+              to="approval"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <ListItemText primary="Approval" />
+            </Link>
           </ListItem>
         </List>
       </Collapse>

@@ -1,6 +1,8 @@
 import Login from "components/login/Login";
 import Dashboard from "components/dashboard/Dashboard";
 import AllInfo from '../EmployeeManagement/AddEmployee/AllInfo';
+import Approval from '../components/leaveManagement/Approval';
+import Request from '../components/leaveManagement/Request';
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
@@ -20,6 +22,12 @@ function AppRouter() {
             </PrivateRoute>
             <PrivateRoute path="/allinfo">
               <AllInfo />
+            </PrivateRoute>
+            <PrivateRoute path="/request">
+              <Request />
+            </PrivateRoute>
+            <PrivateRoute path="/approval">
+              <Approval />
             </PrivateRoute>
         </Switch>
       </Router>
