@@ -1,6 +1,6 @@
 import Login from "components/login/Login";
 import Dashboard from "components/dashboard/Dashboard";
-import AllInfo from '../components/AddEmployee/AllInfo';
+import AllInfo from '../EmployeeManagement/AddEmployee/AllInfo';
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
