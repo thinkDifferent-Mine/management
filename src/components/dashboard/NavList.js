@@ -66,7 +66,10 @@ export default function NavList() {
             <ListItemIcon>
               <UpdateIcon style={{ color: "green" }} />
             </ListItemIcon>
-            <ListItemText primary="Employee Status" />
+            <Link
+              to="employeelist"
+              style={{ textDecoration: "none", color: "black" }}>
+                <ListItemText primary="Employee Status" /></Link>
           </ListItem>
         </List>
       </Collapse>
