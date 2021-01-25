@@ -1,5 +1,5 @@
 import Login from "components/login/Login";
-import Dashboard from "components/dashboard/Dashboard"
+// import Dashboard from "components/sidebar/Sidebar"
 import AllInfo from '../components/EmployeeManagement/AddEmployee/AllInfo';
 import Demo from '../components/workCalender/Demo';
 import Approval from '../components/leaveManagement/Approval';
@@ -18,13 +18,10 @@ function AppRouter() {
           <PublicRoute path="/" exact>
             <Login />
           </PublicRoute>
-          <PrivateRoute path="/dashboard">
-            <Dashboard/>
-            </PrivateRoute>
             <PrivateRoute path="/allinfo">
               <AllInfo />
             </PrivateRoute>
-            <PrivateRoute path="/demo">
+            <PrivateRoute path="/dashboard">
               <Demo />
             </PrivateRoute>
             <PrivateRoute path="/request">
